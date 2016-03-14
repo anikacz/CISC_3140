@@ -1,5 +1,5 @@
 //
-// 
+//
 //  CISC3150proj1
 //
 //  Created by Anika Czander on 3/4/16.
@@ -47,15 +47,25 @@ stack<string> reverseWords(string str)
 
 
 int main() {
-    cout<<"Enter your sentence."<<endl;
-    string ss;
-    getline(cin,ss);
-    stack<string> stack;
-    stack = reverseWords(ss);
-    while(!stack.empty())
+    int count;
+    cout<<"How many sentences would you like to input?"<<endl;
+    cin>>count;
+    for(int i = 0;i <= count; i++)
     {
-        cout<<stack.top();
-        cout<<" ";
-        stack.pop();
+        string ss;
+        getline(cin,ss);
+        stack<string> stack;
+        stack = reverseWords(ss);
+        if(i>0)
+            cout<<"Case #"<<i<<":";
+        while(!stack.empty())
+        {
+            cout<<stack.top();
+            cout<<" ";
+            stack.pop();
+        }
+        cout<<endl;
+        if(i<count)
+            cout<<"Enter your sentence."<<endl;
     }
 }
